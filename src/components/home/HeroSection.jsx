@@ -6,10 +6,10 @@ import StarField from "../StarField";
 
 const HeroSection = () => {
   return (
-    <Container fluid className="position-relative z-3 overflow-hidden py-5 ">
+    <Container fluid className="position-relative z-3 overflow-hidden  ">
       <StarField />
     <div className="hero-glow position-absolute top-0 start-50 translate-middle-x"></div>
-      <Row className="align-items-center justify-content-center hero-container">
+      <Row className="align-items-center justify-content-center">
         <Col lg={7} className="text-center px-lg-5 d-flex flex-column align-items-center justify-content-center">
           {/* Animated Wrapper */}
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="w-100">
@@ -43,7 +43,7 @@ const HeroSection = () => {
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8, duration: 0.8 }}>
               <Row className="g-3 justify-content-center">
                 {stats.map((stat, index) => (
-                  <Col xs={12} sm={6} md={3} key={index}>
+                  <Col xs={12} sm={6} md={4} xl={3} key={index}>
                     <Card className="card-effect-one text-center h-100">
                       <Card.Body>
                         <h3 className="text-primary">{stat.value}</h3>

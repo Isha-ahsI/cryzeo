@@ -1,0 +1,19 @@
+// background.scss
+
+@each $color, $value in $theme-colors {
+  .bg-soft-#{$color} {
+    background-color: rgba($value, .12);
+  }
+  .border-soft-#{$color} {
+    border-color: rgba($value, .15) !important;
+  }
+  .bg-gradient-#{$color} {
+    background: linear-gradient(90deg,transparent,$value,transparent);
+  }
+  .bg-soft-gradient-#{$color}{
+    background: linear-gradient(135deg,$value,$white);
+  }
+ 
+}
+
+

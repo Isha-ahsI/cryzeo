@@ -1,0 +1,66 @@
+// avatar.scss
+// avatar size
+$avatar-sizes: (
+    'xxxs': (24px, 10px),
+    'xxs': (30px, 12px),
+    'xs': (34px, 14px),
+    'sm': (38px, 16px),
+    'md': (42px, 18px),
+    'lg': (46px, 20px),
+    'xl': (50px, 24px),
+    'xxl': (55px, 26px),
+    'xxxl': (60px, 28px)
+);
+
+@each $size, $values in $avatar-sizes {
+
+    .avatar-img-#{$size},
+    .avatar-#{$size} {
+        height: nth($values, 1);
+        width: nth($values, 1);
+        font-size: nth($values, 2);
+    }
+}
+@for $i from 10 through 400{
+    .avatar-img-#{$i}{
+        height: 1px * $i;
+        width: 1px * $i;
+    }
+}
+// Avarat Icon
+.avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: $transition-base;
+
+    @each $color, $value in $theme-colors {
+        &.avatar-soft-#{$color} {
+            cursor: pointer;
+            background: rgba($value, 0.1);
+              transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+        }
+    }
+}
+
+// avatar
+.user-avatars {
+    .user-image {
+        object-fit: cover;
+        width: 50px;
+        height: 50px;
+        border-radius: $border-radius-xxl;
+        overflow: hidden;
+        margin-left: -10px;
+    }
+
+    .user-image:first-child {
+        margin-left: 0;
+    }
+
+    .more {
+        background-color: $primary;
+        color:$white;
+    }
+}

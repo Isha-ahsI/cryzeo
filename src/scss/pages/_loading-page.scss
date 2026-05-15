@@ -1,0 +1,54 @@
+// loading-page.scss
+.particle-container {
+  overflow: hidden;
+  z-index: 1;
+
+  .particle {
+    position: absolute;
+    border-radius: 50%;
+    background: $primary;
+  }
+}
+
+.circle-wrapper {
+  .circle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid $primary;
+    opacity: 0.1;
+  }
+}
+
+.text-animation {
+  text-shadow:0 0 20px #00e7d4;
+  .char {
+    display: inline-block;
+  }
+}
+
+.logo-loader {
+  filter: brightness(1) drop-shadow(0 0 20px $primary);
+  opacity: 0;
+  transition: none;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+}

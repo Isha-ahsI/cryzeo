@@ -1,0 +1,124 @@
+// button.scss
+
+.btn {
+    &.btn-polygon {
+        min-width: 144px;
+        clip-path: polygon(0% 20px, 25px 0px, 100% 0px, 100% calc(100% - 20px), calc(100% - 25px) 100%, 0px 100%);
+        color: $black;
+        border: none;
+        background: $primary;
+        transition: $transition-base;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, $black);
+            transition: transform 0.5s ease-in-out;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba($black, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.2s ease-in-out;
+        }
+        &:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: $box-shadow;
+            &::before {
+                transform: translateX(200%);
+            }
+            &::after {
+                opacity: 1;
+            }
+        }
+        &:active {
+            transform: translateY(0) scale(0.98);
+        }
+    }
+
+    &.btn-primary{
+            background: rgba($white, 0.05);
+            border: 1px solid rgba($white, 0.1);
+            border-radius: 25px;
+            color: $white;
+            transition: all 0.3s ease;
+            &:hover {
+              background: $primary;
+              color: $black;
+            }
+          
+    }
+
+    // Custom button styles
+    &.btn-outline {
+        border: 2px solid $primary;
+        color: $primary;
+        min-width: 144px;
+        clip-path: polygon(0% 20px, 25px 0px, 100% 0px, 100% calc(100% - 20px), calc(100% - 25px) 100%, 0px 100%);
+        transition: all 0.3s ease-in-out;
+        position: relative;
+        overflow: hidden;
+        z-index: 0;
+        span {
+            position: relative;
+            z-index: 1;
+            transition: color 0.2s ease-in-out;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, $primary, lighten($primary, 10%));
+            transition: transform 0.5s ease-in-out;
+            z-index: 0;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba($black, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.2s ease-in-out;
+            z-index: 0;
+        }
+        &:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: $box-shadow;
+            &::before {
+                transform: translateX(200%);
+            }
+            &::after {
+                opacity: 1;
+            }
+            span {
+                color: $white;
+            }
+        }
+        &:active {
+            transform: translateY(0) scale(0.98);
+        }
+    }
+}
+
+@each $color, $value in $theme-colors {
+    .btn {
+        &.btn-soft-#{$color} {
+            background-color: rgba($value, 0.18);
+            border-color: rgba($value, 0.5);
+            color: $value;
+            &:hover {
+                background-color: $value;
+                border-color: $value;
+                color: $white;
+            }
+        }
+    }
+}

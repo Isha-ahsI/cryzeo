@@ -1,0 +1,43 @@
+//accordion.scss
+
+.accordion-item {
+  background: rgba($primary, 0.02);
+  border: 1px solid rgba($primary, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  backdrop-filter: blur(8px);
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $box-shadow;
+  }
+  .accordion-header {
+    .accordion-button {
+      background: transparent;
+      color: $primary;
+      padding: 1rem 1.5rem;
+      border: none;
+      transition: all 0.3s ease;
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      box-shadow: none;
+      &:not(.collapsed) {
+        background: transparent;
+        color: $primary;
+        box-shadow: none;
+      }
+      &:hover {
+        background: rgba($primary, 0.03);
+        color: $white;
+      }
+    }
+  }
+
+  .accordion-body {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    background: rgba($black, 0.02);
+    text-align: left;
+  }
+}

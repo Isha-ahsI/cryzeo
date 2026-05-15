@@ -1,0 +1,378 @@
+// helper.scss
+
+body {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+// Helper.scss
+// Space
+@for $i from 6 through 100 {
+  .mb-#{$i} {
+    margin-bottom: 1px * $i;
+  }
+
+  .mt-#{$i} {
+    margin-top: 1px * $i;
+  }
+
+  .me-#{$i} {
+    margin-right: 1px * $i;
+  }
+
+  .ms-#{$i} {
+    margin-left: 1px * $i;
+  }
+
+  .my-#{$i} {
+    margin-top: 1px * $i;
+    margin-bottom: 1px * $i;
+  }
+
+  .mx-#{$i} {
+    margin-right: 1px * $i;
+    margin-left: 1px * $i;
+  }
+
+  .m-#{$i} {
+    margin: 1px * $i;
+  }
+
+  .pt-#{$i} {
+    padding-top: 1px * $i;
+  }
+
+  .pb-#{$i} {
+    padding-bottom: 1px * $i;
+  }
+
+  .pe-#{$i} {
+    padding-right: 1px * $i;
+  }
+
+  .ps-#{$i} {
+    padding-left: 1px * $i;
+  }
+
+  .py-#{$i} {
+    padding-top: 1px * $i;
+    padding-bottom: 1px * $i;
+  }
+
+  .px-#{$i} {
+    padding-right: 1px * $i;
+    padding-left: 1px * $i;
+  }
+
+  .p-#{$i} {
+    padding: 1px * $i;
+  }
+
+  .gap-#{$i} {
+    gap: 1px * $i;
+  }
+
+  @each $breakpoint, $value in $grid-breakpoints {
+    @media (min-width: #{$value}) {
+      .mb-#{$breakpoint}-#{$i} {
+        margin-bottom: 1px * $i;
+      }
+
+      .mt-#{$breakpoint}-#{$i} {
+        margin-top: 1px * $i;
+      }
+
+      .me-#{$breakpoint}-#{$i} {
+        margin-right: 1px * $i;
+      }
+
+      .ms-#{$breakpoint}-#{$i} {
+        margin-left: 1px * $i;
+      }
+
+      .my-#{$breakpoint}-#{$i} {
+        margin-top: 1px * $i;
+        margin-bottom: 1px * $i;
+      }
+
+      .mx-#{$breakpoint}-#{$i} {
+        margin-right: 1px * $i;
+        margin-left: 1px * $i;
+      }
+
+      .m-#{$breakpoint}-#{$i} {
+        margin: 1px * $i;
+      }
+
+      .pb-#{$breakpoint}-#{$i} {
+        padding-bottom: 1px * $i;
+      }
+
+      .pt-#{$breakpoint}-#{$i} {
+        padding-top: 1px * $i;
+      }
+
+      .pe-#{$breakpoint}-#{$i} {
+        padding-right: 1px * $i;
+      }
+
+      .ps-#{$breakpoint}-#{$i} {
+        padding-left: 1px * $i;
+      }
+
+      .py-#{$breakpoint}-#{$i} {
+        padding-top: 1px * $i;
+        padding-bottom: 1px * $i;
+      }
+
+      .px-#{$breakpoint}-#{$i} {
+        padding-right: 1px * $i;
+        padding-left: 1px * $i;
+      }
+
+      .p-#{$breakpoint}-#{$i} {
+        padding: 1px * $i;
+      }
+
+      .gap-#{$breakpoint}-#{$i} {
+        gap: 1px * $i;
+      }
+    }
+  }
+}
+
+// Font-size
+@for $i from 10 through 100 {
+  .fs-#{$i} {
+    font-size: 1px * $i;
+  }
+}
+
+/* Highlight text */
+.highlight {
+  background: linear-gradient(45deg, $primary, $secondary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.point {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    background: $primary;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba($black, .2);
+    content: "";
+    height: 7px;
+    left: 0;
+    position: absolute;
+    top: .5rem;
+    width: 7px;
+  }
+}
+
+.bg-light {
+  background: rgb($white , 0.05) !important;
+}
+
+// Overlay to blend with existing grid
+.grid-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(90deg, rgba($primary, 0.1) 1px, transparent 1px) 0 0 / 50px 50px,
+    linear-gradient(rgba($primary, 0.1) 1px, transparent 1px) 0 0 / 50px 50px;
+  opacity: 0.5;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.main-section {
+  margin: 100px 0;
+
+  .section {
+    padding: 40px 0;
+
+    @media (min-width: 576px) {
+      padding: 60px 0;
+    }
+
+    @media (min-width: 768px) {
+      padding: 60px 0;
+    }
+
+    @media (min-width: 1200px) {
+      padding: 80px 0;
+    }
+  }
+}
+
+.hero-sec2 {
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: radial-gradient(circle at bottom,
+        rgba($primary, 0.7) 0%,
+        rgba($black, 0.1) 50%,
+        rgba($black, 0) 75%,
+        rgba($black, 0) 100%);
+  }
+
+  .content-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: radial-gradient(circle at bottom,
+        rgba($black, 0.5) 0%,
+        rgba($black, 0.7) 50%,
+        rgba($black, 0) 75%,
+        rgba($black, 0) 100%);
+  }
+
+}
+
+.hero-sec3 {
+  .sparkle-container {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+
+    .sparkle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background-color: $white;
+      box-shadow: 0 0 12px rgba($white, 0.9);
+      border-radius: $border-radius-2xl;
+      opacity: 0;
+      animation: sparkleFall linear forwards, sparkGlow ease-in-out infinite;
+    }
+  }
+
+  .hero3-img {
+    width: 100%;
+    height: auto;
+    max-width: 700px;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0 50px 100px rgba($primary, 0.4)) drop-shadow(0 -30px 40px rgba($primary, 0.4));
+    z-index: 5;
+  }
+
+}
+
+@keyframes sparkleFall {
+
+  0%,
+  100% {
+    transform: translateY(0px) scale(0.4);
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(80vh) scale(0.4);
+    opacity: 0;
+  }
+}
+
+@keyframes sparkGlow {
+
+  0%,
+  100% {
+    filter: drop-shadow(0 0 2px rgba($white, 0.5));
+    opacity: 0.2;
+  }
+
+  50% {
+    filter: drop-shadow(0 0 48px rgba($white, 1));
+    opacity: 1;
+  }
+}
+
+.hero-sec4 {
+  .hero4-img {
+    filter: drop-shadow(0 15px 50px rgba($primary, 0.5));
+  }
+
+  .hero-static-icons {
+    .hero-icon {
+      position: absolute;
+      background-color: rgba($white, 0.5);
+      border-radius: $border-radius-2xl;
+      padding: 12px;
+      opacity: 0.5;
+      animation: drift 3s ease-in-out infinite;
+
+      &.bitcoin-icon {
+        left: 50px;
+        top: 250px;
+      }
+
+      &.cardano-icon {
+        right: 50px;
+        bottom: 150px;
+      }
+
+      &.ethirum-icon {
+        right: 500px;
+        top: 150px;
+      }
+
+      &.ripple-icon {
+        left: 500px;
+        bottom: 100px;
+      }
+
+      &.solana-icon {
+        left: 800px;
+        top: 500px
+      }
+    }
+
+  }
+}
+
+@keyframes drift {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  25% {
+    transform: translate(10px, -10px);
+  }
+
+  50% {
+    transform: translate(-10px, 10px);
+  }
+
+  75% {
+    transform: translate(5px, -5px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}

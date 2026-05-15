@@ -1,0 +1,16 @@
+// modal.scss
+
+.modal {
+    box-shadow: $box-shadow;
+    backdrop-filter: blur(10px);
+
+    .modal-content {
+        background: $gray-100 !important;
+        box-shadow: 0 0 15px rgba($black, .2), inset 0 0 0 1px rgba($white, .05);
+        border: 0.5px solid rgba($primary, 0.5) !important;
+
+        .btn-close {
+            color: adjust-hue($primary, 180deg) !important;
+        }
+    }
+}

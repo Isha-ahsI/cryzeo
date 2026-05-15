@@ -1,0 +1,32 @@
+// dropdown.scss
+.dropdown-toggle {
+    background: rgba($white, 0.03) !important;
+    border: 1px solid rgba($white, 0.1) !important;
+    color: $white !important;
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: $transition-base;
+    &:hover, &:focus {
+      background: rgba($primary, 0.1) !important;
+      border-color: rgba($primary, 0.3) !important;
+      box-shadow: $box-shadow !important;
+    }
+  }
+  
+  .dropdown-menu {
+    background: rgba($black, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba($white, 0.1);
+    border-radius: 8px;
+    padding: 0.5rem;
+    .dropdown-item {
+      color: $white;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      &:hover {
+        background: rgba($primary, 0.1);
+        color: $primary;
+      }
+    }
+  }

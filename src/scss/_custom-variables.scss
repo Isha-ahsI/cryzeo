@@ -1,0 +1,25 @@
+// custom-variables.scss
+
+$font-size-xs: 0.9375rem;
+$img-shadow: 0px 15px 15px rgba($light, .20);
+$text-shadow: 0px 3px 6px rgba($light, .25);
+
+$topbar-height: 70px;
+$topbar-shadow: 0px 4px 4px rgba($light, .12);
+
+$title-font-size: 36px;
+$badge-shadow: 0px 2px 1px 0px rgba($light, 0.20);
+
+$card-hover-shadow: 0px 5px 8px 0px rgba($light, .15);
+$input-shadow: 0px 2px 1px 0px rgba($light, 0.20);
+
+$transition: all .3s ease-in-out;
+
+
+$button-padding-y: 10px;
+$button-padding-x: 37.5px;
+$button-font-size: 14px;
+$button-border-radius: 10px;
+$button-clip-offset: 20px;
+$button-clip-offset-small: 15px;
+$button-transition: 0.2s;

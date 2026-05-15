@@ -1,0 +1,26 @@
+.form-control {
+  background: rgba($white, 0.05);
+  border: 1px solid rgba($white, 0.1);
+  border-radius: $border-radius-lg;
+  padding: .7rem $input-btn-padding-x;
+  transition: $transition-base;
+
+  &:focus {
+    background: rgba($white, 0.08);
+    border-color: $primary;
+    box-shadow: 0 0 15px rgba($black, .2);
+  }
+}
+
+.input-group{
+  .input-group-text{
+    background-color: $primary;
+    color: $black;
+    transition: $transition-base;
+
+    &:hover{
+      background-color: transparent;
+      color: $primary;
+    }
+  }
+}

@@ -1,0 +1,130 @@
+// top-menu.scss
+
+.custom-navbar {
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  background: transparent;
+  backdrop-filter: none;
+
+  &.navbar-scrolled {
+    backdrop-filter: blur(30px);
+    background: rgba($gray-400, 0.1);
+
+  }
+
+  .nav-link {
+    transition: $transition-base;
+    white-space: nowrap;
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: $primary;
+      transform: translateX(-50%);
+      transition: width 0.3s ease;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba($primary, 0.05);
+      border-radius: 6px;
+      transform: scale(0.8);
+      opacity: 0;
+      transition: all 0.3s ease;
+      z-index: -1;
+    }
+
+    &:hover {
+      color: $primary !important;
+      transform: translateY(-2px);
+
+      &::before {
+        width: 80%;
+      }
+      &::after {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    &.active {
+      color: $primary !important;
+      font-weight: 600;
+      &::before {
+        width: 80%;
+      }
+      &::after {
+        transform: scale(1);
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .custom-toggler-icon {
+    border: none;
+    background: rgba($primary, 0.05);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: $box-shadow;
+    border-radius: 8px;
+
+    &:hover {
+      background: rgba($primary, 0.1);
+      transform: rotate(90deg);
+    }
+  }
+
+  .navbar-collapse {
+    margin-top: 1rem;
+    padding: 1rem;
+    border: 1px solid rgba($white, 0.1);
+    box-shadow: $box-shadow;
+
+    @media (max-width: 991.98px) {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 300px;
+      height: 100vh;
+      margin-top: 0;
+      padding: 2rem 1.5rem;
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
+      z-index: 1050;
+      background: linear-gradient(135deg, $black, rgba($black, 0.9));
+      box-shadow: $box-shadow;
+      border-left: 1px solid rgba($white, 0.1);
+      overflow-y: auto;
+      &.show {
+        transform: translateX(0);
+      }
+
+      .nav-link {
+        padding: 0.75rem 1rem;
+        margin: 0.5rem 0;
+        border-radius: 8px;
+        &:hover {
+          background: rgba($primary, 0.05);
+        }
+      }
+    }
+
+    @media (min-width: 992px) {
+      background: transparent;
+      margin-top: 0;
+      padding: 0;
+      border: none;
+      box-shadow: none;
+    }
+  }
+
+  .nav-link.active {
+    color: $primary;
+  }
+}

@@ -1,0 +1,196 @@
+// orbit.scss
+
+.hero-sec2 {
+    .orbit-container {
+        position: absolute;
+        bottom: -50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 50%;
+        transform-origin: center;
+
+        .orbit {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border: 2px solid rgba($primary, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: rotate 30s linear infinite;
+            height: 100%;
+            width: 100%;
+
+            &.orbit-inner {
+                width: 400px;
+                height: 400px;
+                background-color: rgba($primary, 0.4);
+                animation-duration: 100s;
+
+                .orbit-i1 {
+                    top: 20%;
+                    left: 90%;
+                }
+
+                .orbit-i2 {
+                    top: 100%;
+                    left: 50%;
+                }
+
+                .orbit-i3 {
+                    top: 20%;
+                    left: 10%;
+                }
+            }
+
+            &.orbit-middle {
+                width: 600px;
+                height: 600px;
+                animation-duration: 120s;
+                background-color: rgba($primary, 0.3);
+
+                .orbit-m1 {
+                    top: 20%;
+                    left: 10%;
+                }
+
+                .orbit-m2 {
+                    top: 30%;
+                    left: 96%;
+                }
+
+                .orbit-m3 {
+                    top: 90%;
+                    left: 80%;
+                }
+
+                .orbit-m4 {
+                    top: 70%;
+                    left: 4%;
+                }
+
+                .orbit-m5 {
+                    top: 0%;
+                    left: 55%;
+                }
+
+            }
+
+            &.orbit-outer {
+                width: 800px;
+                height: 800px;
+                animation-duration: 140s;
+                background-color: rgba($primary, 0.2);
+
+                .orbit-o1 {
+                    top: 4%;
+                    left: 30%;
+                }
+
+                .orbit-o2 {
+                    top: 20%;
+                    left: 90%;
+                }
+
+                .orbit-o3 {
+                    top: 55%;
+                    left: 100%;
+                }
+
+                .orbit-o4 {
+                    top: 98%;
+                    left: 35%;
+                }
+
+                .orbit-o5 {
+                    top: 55%;
+                    left: 0%;
+                }
+
+                .orbit-o6 {
+                    top: 90%;
+                    left: 80%;
+                }
+
+            }
+
+            &.orbit-outer-1 {
+                width: 1000px;
+                height: 1000px;
+                animation-duration: 160s;
+                background-color: rgba($primary, 0.1);
+
+                .orbit-o11 {
+                    top: 20%;
+                    left: 90%;
+                }
+
+                .orbit-o12 {
+                    top: 50%;
+                    left: 100%;
+                }
+
+                .orbit-o13 {
+                    top: 90%;
+                    left: 80%;
+                }
+
+                .orbit-o14 {
+                    top: 90%;
+                    left: 20%;
+                }
+
+                .orbit-o15 {
+                    top: 45%;
+                    left: 0%;
+                }
+
+                .orbit-o16 {
+                    top: 0%;
+                    left: 55%;
+                }
+
+                .orbit-o17 {
+                    top: 10%;
+                    left: 20%;
+                }
+            }
+
+            .orbit-dots {
+                background-color: $primary;
+                border-radius: 50%;
+                overflow: hidden;
+                position: absolute;
+                transform: translate(-50%, -50%) rotate(-0deg);
+                animation: counterRotate 30s linear infinite, glowPulse 2s ease-in-out infinite;
+                width: 10px;
+                height: 10px;
+            }
+        }
+    }
+
+}
+
+@keyframes rotate {
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes counterRotate {
+    100% {
+        transform: translate(-50%, -50%) rotate(-360deg);
+    }
+}
+
+@keyframes glowPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 10px $white, 0 0 20px $white;
+    }
+
+    50% {
+        box-shadow: 0 0 60px $white, 0 0 120px $white;
+    }
+}

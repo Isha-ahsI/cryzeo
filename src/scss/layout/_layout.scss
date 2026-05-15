@@ -1,0 +1,95 @@
+// layout.scss
+
+.layout-wrapper {
+  position: relative;
+  min-height: 100vh;
+  background-image: url('../../images/body-bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100%;
+
+  // background: linear-gradient(135deg, rgba($gray-100, 0.1), rgba($gray-100, 0.3));
+  .highlighted {
+    position: fixed;
+    pointer-events: none;
+    z-index: 1;
+
+    @media (min-width: 768px) {
+      width: 60px;
+
+      // Desktop defaults
+      &.highlight-1 {
+        top: 8%;
+        left: 5%;
+      }
+
+      &.highlight-2 {
+        top: 30%;
+        right: 6%;
+      }
+
+      &.highlight-3 {
+        bottom: 15%;
+        right: 8%;
+      }
+
+      &.highlight-4 {
+        top: 50%;
+        left: 50%;
+      }
+
+      &.highlight-5 {
+        bottom: 20%;
+        left: 30%;
+      }
+
+    }
+
+    @media (min-width: 0px) and (max-width: 767.98px) {
+      width: 40px;
+
+      &.highlight-1 {
+        top: 10%;
+        left: 4%;
+      }
+
+
+      &.highlight-2 {
+        top: 35%;
+        right: 5%;
+      }
+
+      &.highlight-3 {
+        bottom: 12%;
+        right: 6%;
+      }
+    }
+
+  }
+
+  .animated-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+
+    .grid-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background-image:
+        linear-gradient(rgba($white, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba($white, 0.04) 1px, transparent 1px);
+      background-size: 80px 80px;
+      opacity: 0.4;
+      z-index: 0;
+    }
+  }
+}
